@@ -13,7 +13,9 @@ const FRONT_LIST = [process.env.FRONT1, process.env.FRONT2, process.env.FRONT3]
 connectDB();
 
 const app = express();
-app.use(cors({ origin: FRONT_LIST, credentials: true }));
+// old args - not work now
+// app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
